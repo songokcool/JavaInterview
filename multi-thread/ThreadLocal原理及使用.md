@@ -5,7 +5,7 @@
 
 大致意思是，ThreadLocal提供线程局部变量，每个线程都有自己的，独立的初始化线程副本。当每个线程访问的时候，得到的都是线程自己的变量，这样就不会存在线程安全的问题。
 
-![avatar](../pictures/ThreadLocal.png)
+![avatar](../pictures/DSC00699.jpg)
 
 ### 2.ThreadLocal简单实例
 
