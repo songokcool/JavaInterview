@@ -136,7 +136,8 @@ case4.默认只在unchecked异常回滚。A和B都有事务，A方法调用B方�
 这种场景没有事务，Spring开启事务是根据调用的方法上面是否有@Transactional注解。外界调用A方法，A没有注解，所以不开启事务，也就不存在回滚。
 
 ```java
-    public void insertA() {
+    // @Transactional
+	public void insertA() {
         User user = new User();
         user.setName("张三");
         userMapper.insert(user);
