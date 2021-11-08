@@ -26,7 +26,7 @@
 
 &emsp;&emsp;本地方法栈（Native Method Stacks）与虚拟机栈所发挥的作用是非常相似的，其区别只是虚拟机栈为虚拟机执行Java方法（也就是字节码）服务，而本地方法栈则是为虚拟机使用到本地（Native）方法服务。
 
-&emsp;&emsp;与虚拟机栈一样，本地方法栈也会抛出StackOverflowError和OutOfMemoryError异常
+&emsp;&emsp;与虚拟机栈一样，本地方法栈也会抛出StackOverflowError和OutOfMemoryError异常。
 
 ### 5.Java堆
 
@@ -34,9 +34,13 @@
 
 &emsp;&emsp;Java堆是垃圾收集器管理的内存区域，因此也被称作“GC堆（Garbage Collected Heap）”。从回收内存的角度看，由于现代垃圾收集器大部分都是基于分代收集理论设计的，所以Java堆中经常会出现“新生代”、“老年代”、“永久代”、“Eden空间”、“From Survivor空间”、“To Survivor空间”等。
 
+&emsp;&emsp;Java堆既可以被实现成固定大小的，也可以是扩展的（通过参数-Xmx和-Xms设定）。如果在Java堆中没有内存完成实例分配，并且堆也无法再扩展时，Java虚拟机会抛出OutOfMemoryError异常。
+
 ### 6.方法区
 
 &emsp;&emsp;方法区（Method Area）与Java堆一样，是各个线程共享的内存区域，它用于存储已被虚拟机加载的类信息、常量、静态变量、即时编器编译后的代码缓存等数据。
+
+&emsp;&emsp;如果方法区无法满足新的内存分配需求，抛出OutOfMemoryError异常。
 
 ### 7.运行时常量池
 
