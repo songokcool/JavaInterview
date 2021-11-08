@@ -46,6 +46,8 @@
 
 &emsp;&emsp;运行时常量池（Runtime Constant Pool）是方法区的一部分。Class文件中除了有类的版本、字段、方法、接口等描述信息外，还有一项信息常量池表（Constant Pool Table），用于存在编译期生成的各种字面量与符号引用，这部分内容将在类加载后存放到方法区的运行时常量池。
 
+&emsp;&emsp;当常量池无法再申请到内存时，抛出OutOfMemoryError异常。
+
 ### 8.直接内存
 
 &emsp;&emsp;直接内存（Direct Memory）并不是虚拟机运行时数据区的一部分，也不是《Java虚拟机规范》中定义的内存区域。但是这部分内存也被频繁地使用，而且也可能导致OOM异常出现。
